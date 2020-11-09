@@ -32,14 +32,14 @@
         android:layout_y="97dp"
         android:text="edad" />
 
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="37dp"
-        android:layout_y="239dp"
+        android:layout_x="23dp"
+        android:layout_y="248dp"
         android:text="nombre del curso" />
-
 
     <EditText
         android:id="@+id/editText"
@@ -53,27 +53,27 @@
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
-        android:layout_height="31dp"
+        android:layout_height="wrap_content"
         android:layout_x="190dp"
-        android:layout_y="49dp"
+        android:layout_y="35dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="106dp"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
         android:layout_x="32dp"
-        android:layout_y="129dp"
+        android:layout_y="118dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="135dp"
-        android:layout_height="26dp"
-        android:layout_x="26dp"
-        android:layout_y="269dp"
+        android:layout_height="wrap_content"
+        android:layout_x="13dp"
+        android:layout_y="285dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -124,7 +124,7 @@
     <EditText
         android:id="@+id/editText5"
         android:layout_width="172dp"
-        android:layout_height="23dp"
+        android:layout_height="wrap_content"
         android:layout_x="210dp"
         android:layout_y="273dp"
         android:ems="10"
@@ -134,8 +134,8 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="202dp"
-        android:layout_y="319dp"
+        android:layout_x="198dp"
+        android:layout_y="318dp"
         android:onClick="insertarCurso"
         android:text="guardar" />
 
@@ -154,6 +154,7 @@
         android:layout_height="wrap_content"
         android:layout_x="194dp"
         android:layout_y="376dp"
+        android:onClick="actualizarCurso"
         android:text="actualizar" />
 
     <Button
@@ -168,8 +169,8 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="169dp"
-        android:layout_height="wrap_content"
-        android:layout_x="13dp"
+        android:layout_height="35dp"
+        android:layout_x="10dp"
         android:layout_y="194dp" />
 
     <TextView

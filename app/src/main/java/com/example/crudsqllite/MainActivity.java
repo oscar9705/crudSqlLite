@@ -12,13 +12,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     EditText et1, et2, et3, et4, et5, et6;
     Spinner sp;
-    List<String> cursos;
-    List<Integer> cursosId;
+    List<String> cursos= new ArrayList<>();
+    List<Integer> cursosId= new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,24 +33,46 @@ public class MainActivity extends AppCompatActivity {
         et5 = (EditText) findViewById(R.id.editText5); // creditos del curso
         et6 = (EditText) findViewById(R.id.editText6); // codigo del curso
 
-        sp= (Spinner)findViewById(R.id.spinner); // listado de cursos
+        sp= (Spinner)findViewById(R.id.spinner);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, cursos);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listarCursos());
         sp.setAdapter(adapter);
+       /* // listado de cursos
+        cursos.add("Seleccione una opcion");
+        if(cursos.size()>1){
+            adapter(cursos);
+        } else{
+            adapter(null);
+        }
+
+*/
+
+
+
 
 
     }
-    public void listarCursos(){
+    public ArrayAdapter<String> adapter(List<String> cursos){
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, cursos);
+       return adapter;
+    }
+    public List<String> listarCursos(){
 
 
         AdminSQLiteOpenHelper   admin = new AdminSQLiteOpenHelper(this,"administracion",null, 1);
         SQLiteDatabase  bd = admin.getWritableDatabase();
+        List<String> cursosSpinner= new ArrayList<>();
         Cursor fila = bd.rawQuery("select codigo_cu ,nombre_cu from cursos ", null);
+
         while(fila.moveToNext()){
             cursosId.add(fila.getInt(0));
             cursos.add(fila.getString(1));
+            cursosSpinner.add(fila.getString(1));
         }
 
+
+        return cursosSpinner;
     }
 
     public void insertar(View v) {
@@ -90,12 +113,18 @@ public class MainActivity extends AppCompatActivity {
         registro.put("creditos_cu", credito);
 
         bd.insert("cursos", null, registro);
+
+
+
         bd.close();
-        listarCursos();
+
         et1.setText("");
         et2.setText("");
         et3.setText("");
         et4.setText("");
+        et5.setText("");
+        et6.setText("");
+
         Toast.makeText(this, "se cargaron los datos del curso", Toast.LENGTH_SHORT).show();
     }
 
@@ -193,7 +222,19 @@ public class MainActivity extends AppCompatActivity {
         int cant = bd.delete("cursos","codigo_cu = " + id, null);
         if(cant == 1){
             Toast.makeText(this, "se eliminó correctamente", Toast.LENGTH_SHORT).show();
+            et1.setText("");
+            et2.setText("");
+            et3.setText("");
+            et4.setText("");
+            et5.setText("");
+            et6.setText("");
         } else {
+            et1.setText("");
+            et2.setText("");
+            et3.setText("");
+            et4.setText("");
+            et5.setText("");
+            et6.setText("");
             Toast.makeText(this, "no existe un curso con dicho codigo", Toast.LENGTH_SHORT).show();
         }
     }
