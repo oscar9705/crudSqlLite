@@ -1,15 +1,18 @@
 package com.example.crudsqllite;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -17,6 +20,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     EditText et1, et2, et3, et4, et5, et6;
+    TextView tv9;
     Spinner sp;
     List<String> cursos= new ArrayList<>();
     List<Integer> cursosId= new ArrayList<>();
@@ -33,20 +37,13 @@ public class MainActivity extends AppCompatActivity {
         et5 = (EditText) findViewById(R.id.editText5); // creditos del curso
         et6 = (EditText) findViewById(R.id.editText6); // codigo del curso
 
+        tv9 = (TextView) findViewById(R.id.textView9); // curso
         sp= (Spinner)findViewById(R.id.spinner);
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listarCursos());
         sp.setAdapter(adapter);
-       /* // listado de cursos
-        cursos.add("Seleccione una opcion");
-        if(cursos.size()>1){
-            adapter(cursos);
-        } else{
-            adapter(null);
-        }
 
-*/
 
 
 
@@ -70,9 +67,13 @@ public class MainActivity extends AppCompatActivity {
             cursos.add(fila.getString(1));
             cursosSpinner.add(fila.getString(1));
         }
+        if(cursosSpinner.isEmpty()){
 
-
+        }
         return cursosSpinner;
+
+
+
     }
 
     public void insertar(View v) {
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         String cedula = et1.getText().toString();
         String nombre = et2.getText().toString();
         String edad = et3.getText().toString();
-        int idCurso = cursosId.get(idSpinner-1);
+        int idCurso = cursosId.get(idSpinner);
 
         ContentValues registro = new ContentValues();
         registro.put("cedula_est", cedula);
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
         bd.insert("cursos", null, registro);
 
-
+        sp.setAdapter(adapter(listarCursos()));
 
         bd.close();
 
@@ -128,14 +129,32 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "se cargaron los datos del curso", Toast.LENGTH_SHORT).show();
     }
 
+
+    public String nombreCurso(int id){
+        String res="";
+        for (int i=0; i < cursosId.size();i++){
+          if(cursosId.get(i) == id){
+              res = cursos.get(i);
+              break;
+          }
+        }
+        return res;
+    }
+
     public void consultar(View v) {
         AdminSQLiteOpenHelper   admin = new AdminSQLiteOpenHelper(this,"administracion",null, 1);
         SQLiteDatabase  bd = admin.getWritableDatabase();
         String cedula = et1.getText().toString();
-        Cursor fila = bd.rawQuery("select nombre_est, edad_est from estudiantes where cedula_est =" +cedula,null);
+        Cursor fila = bd.rawQuery("select nombre_est, edad_est, id_curso from estudiantes where cedula_est =" +cedula,null);
         if(fila.moveToFirst()){
             et2.setText(fila.getString(0));
             et3.setText(fila.getString(1));
+            if(nombreCurso(fila.getInt(2)).length() ==0){
+                Toast.makeText(this, "Eror con el curso ", Toast.LENGTH_SHORT).show();
+            } else {
+
+                tv9.setText(nombreCurso(fila.getInt(2)));
+            }
         } else {
             Toast.makeText(this, "No existe un estudiante con dicha cedula ", Toast.LENGTH_SHORT).show();
         }
