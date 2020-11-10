@@ -12,8 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_x="130dp"
         android:layout_y="309dp"
-        android:text="Empleados"
         android:onClick="redirigirEmpleados"
+        android:text="Empleados"
+        android:textAlignment="center"
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="341dp" />
 
@@ -23,8 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_x="135dp"
         android:layout_y="228dp"
-        android:text="Empresas"
         android:onClick="redirigirEmpresas"
+        android:text="Empresas"
+        android:textAlignment="center"
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="272dp" />
 

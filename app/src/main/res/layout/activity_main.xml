@@ -42,33 +42,6 @@
         android:text="nombre del curso" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="139dp"
-        android:layout_height="wrap_content"
-        android:layout_x="19dp"
-        android:layout_y="43dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="178dp"
-        android:layout_y="44dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="106dp"
-        android:layout_height="wrap_content"
-        android:layout_x="32dp"
-        android:layout_y="118dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
         android:id="@+id/editText4"
         android:layout_width="135dp"
         android:layout_height="wrap_content"
@@ -221,5 +194,35 @@
         android:layout_height="313dp"
         android:layout_x="24dp"
         android:layout_y="393dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:layout_x="36dp"
+        android:layout_y="43dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:layout_x="188dp"
+        android:layout_y="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_x="27dp"
+        android:layout_y="122dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
 
 </AbsoluteLayout>
