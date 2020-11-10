@@ -8,9 +8,9 @@
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="wrap_content"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
-        android:layout_x="130dp"
+        android:layout_x="124dp"
         android:layout_y="309dp"
         android:onClick="redirigirEmpleados"
         android:text="Empleados"
@@ -20,9 +20,9 @@
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="wrap_content"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
-        android:layout_x="135dp"
+        android:layout_x="124dp"
         android:layout_y="228dp"
         android:onClick="redirigirEmpresas"
         android:text="Empresas"
@@ -34,11 +34,20 @@
         android:id="@+id/textView8"
         android:layout_width="129dp"
         android:layout_height="45dp"
-        android:layout_x="125dp"
+        android:layout_x="124dp"
         android:layout_y="30dp"
         android:text="Parcial 2"
         android:textAlignment="center"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="126dp"
         tools:layout_editor_absoluteY="40dp" />
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_x="124dp"
+        android:layout_y="378dp"
+        android:onClick="redirigirListado"
+        android:text="listado" />
 </AbsoluteLayout>

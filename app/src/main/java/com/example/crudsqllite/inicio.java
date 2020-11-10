@@ -24,4 +24,7 @@ public class inicio extends AppCompatActivity {
     public void redirigirEmpleados(View v){
         startActivity(redireccion(empleado.class));
     }
+    public void redirigirListado(View v){
+        startActivity(redireccion(lista.class));
+    }
 }
