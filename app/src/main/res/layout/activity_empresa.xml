@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".empresa">
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="170dp"
+        android:layout_y="52dp"
+        android:text="Empresas"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="37dp"
+        android:layout_y="108dp"
+        android:text="id " />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="263dp"
+        android:layout_y="108dp"
+        android:text="nombre" />
+
+    <EditText
+        android:id="@+id/editText13"
+        android:layout_width="120dp"
+        android:layout_height="39dp"
+        android:layout_x="35dp"
+        android:layout_y="139dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/editText14"
+        android:layout_width="120dp"
+        android:layout_height="39dp"
+        android:layout_x="211dp"
+        android:layout_y="139dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="263dp"
+        android:layout_y="205dp"
+        android:text="direccion" />
+
+    <EditText
+        android:id="@+id/editText15"
+        android:layout_width="120dp"
+        android:layout_height="39dp"
+        android:layout_x="211dp"
+        android:layout_y="235dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_x="211dp"
+        android:layout_y="286dp"
+        android:onClick="insertar"
+        android:text="guardar" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_x="211dp"
+        android:layout_y="428dp"
+        android:onClick="consultar"
+        android:text="consultar" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_x="211dp"
+        android:layout_y="353dp"
+        android:onClick="actualizar"
+        android:text="actualizar" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_x="211dp"
+        android:layout_y="490dp"
+        android:onClick="listar"
+        android:text="listar " />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="145dp"
+        android:layout_height="323dp"
+        android:layout_x="35dp"
+        android:layout_y="214dp" />
+</AbsoluteLayout>

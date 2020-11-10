@@ -42,12 +42,22 @@ public class empresa extends AppCompatActivity {
     public List<String> listarEmpresas(SQLiteDatabase bd){
 
         List<String> listaEmp = new ArrayList<>();
-        Cursor fil = bd.rawQuery("select * from empresas",null);
+        Cursor fil = bd.rawQuery("select id_empresa, nombre_empresa from empresas",null);
         while (fil.moveToNext()){
             String res = fil.getInt(0)+" "+fil.getString(1);
             listaEmp.add(res);
         }
         return listaEmp;
+    }
+    public void listar(View v){
+        List<String> empList  = listarEmpresas(bd());
+        if(empList.isEmpty()){
+            Toast.makeText(this, "no hay empresas guardadas", Toast.LENGTH_SHORT).show();
+        } else {
+            lv.setAdapter(adapterList(empList));
+            //bd().close();
+        }
+
     }
     public void insertar(View v) {
 
