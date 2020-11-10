@@ -83,16 +83,12 @@ public class empleado extends AppCompatActivity {
         }
         return listaEmp;
     }
-    public List<String> listarEmpresasLv(SQLiteDatabase bd){
+    public List<String> listarEmpleadosLv(SQLiteDatabase bd){
 
         List<String> listaEmp = new ArrayList<>();
-        Cursor fil = bd.rawQuery("select id_empresa,nombre_empresa, direccion_empresa from empresas",null);
+        Cursor fil = bd.rawQuery("select id_empleado,nombre_empleado from empleados",null);
         while (fil.moveToNext()){
-            Empresa emp = new Empresa();
-            emp.setIdEmpresa(fil.getInt(0));
-            emp.setNombreEmpresa(fil.getString(1));
-            emp.setDireccionEmpresa(fil.getString(2));
-            empresaList.add(emp);
+
             String res = fil.getString(0)+" "+fil.getString(1);
             listaEmp.add(res);
         }
@@ -168,7 +164,7 @@ public class empleado extends AppCompatActivity {
 
     }
     public void listar(View v){
-        List<String> empList  = listarEmpresasLv(bd());
+        List<String> empList  = listarEmpleadosLv(bd());
         if(empList.isEmpty()){
             Toast.makeText(this, "no hay empleados guardados", Toast.LENGTH_SHORT).show();
         } else {
