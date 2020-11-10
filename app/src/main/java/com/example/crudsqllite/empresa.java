@@ -97,7 +97,6 @@ public class empresa extends AppCompatActivity {
         ContentValues registro = new ContentValues();
         registro.put("nombre_empresa", nombre);
         registro.put("direccion_empresa", direccion);
-        bd().insert("empresas", null, registro);
         int cant = bd().update("empresas", registro, "id_empresa="+id,null);
         bd().close();
         if( cant == 1){

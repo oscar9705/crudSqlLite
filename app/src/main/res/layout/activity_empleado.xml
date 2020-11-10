@@ -1,9 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".empleado">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="126dp"
+        android:layout_y="37dp"
+        android:text="Empleados"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="19dp"
+        android:layout_y="85dp"
+        android:text="id" />
+
+    <EditText
+        android:id="@+id/editText20"
+        android:layout_width="86dp"
+        android:layout_height="wrap_content"
+        android:layout_x="19dp"
+        android:layout_y="111dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="159dp"
+        android:layout_y="86dp"
+        android:text="nombre" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="159dp"
+        android:layout_y="167dp"
+        android:text="correo" />
+
+    <EditText
+        android:id="@+id/editText21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="159dp"
+        android:layout_y="112dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="162dp"
+        android:layout_y="191dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_x="19dp"
+        android:layout_y="224dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="19dp"
+        android:layout_y="196dp"
+        android:text="empresa" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_x="256dp"
+        android:layout_y="257dp"
+        android:onClick="insertar"
+        android:text="guardar" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_x="255dp"
+        android:layout_y="317dp"
+        android:onClick="consultar"
+        android:text="consultar" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_x="255dp"
+        android:layout_y="379dp"
+        android:onClick="listar"
+        android:text="listar " />
+
+    <Button
+        android:id="@+id/button19"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_x="255dp"
+        android:layout_y="438dp"
+        android:onClick="actualizar"
+        android:text="actualizar" />
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_x="255dp"
+        android:layout_y="496dp"
+        android:text="eliminar" />
+
+    <ListView
+        android:id="@+id/listView2"
+        android:layout_width="188dp"
+        android:layout_height="283dp"
+        android:layout_x="19dp"
+        android:layout_y="258dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_x="19dp"
+        android:layout_y="164dp" />
+</AbsoluteLayout>
